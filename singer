@@ -1,0 +1,49 @@
+# 1224
+#include<stdio.h>
+#include<stdlib.h>
+int cmp(const void*a,const void*b)
+{return *(int*)b-*(int*)a;}
+int lalala(a[],10,)
+int main()
+{ int a[5][12];
+  int i;
+  int j;
+  for(i=0;i<5;i++)
+   for(j=0;j<12;j++)
+     {
+       int m;
+       scanf("%d",&m);
+       a[i][j]=m;
+     }
+  float ave[10];
+   ave[0]=a[0][0]+a[0][1]+a[0][2]+a[0][3]+a[0][4]+a[0][5];
+   ave[1]=a[0][6]+a[0][7]+a[0][8]+a[0][9]+a[0][10]+a[0][11];
+   ave[2]=a[1][0]+a[1][1]+a[1][2]+a[1][3]+a[1][4]+a[1][5];
+   ave[3]=a[1][6]+a[1][7]+a[1][8]+a[1][9]+a[1][10]+a[1][11];
+   ave[4]=a[2][0]+a[2][1]+a[2][2]+a[2][3]+a[2][4]+a[2][5];
+   ave[5]=a[2][6]+a[2][7]+a[2][8]+a[2][9]+a[2][10]+a[2][11];
+   ave[6]=a[3][0]+a[3][1]+a[3][2]+a[3][3]+a[3][4]+a[3][5];
+   ave[7]=a[3][6]+a[3][7]+a[3][8]+a[3][9]+a[3][10]+a[3][11];
+   ave[8]=a[4][0]+a[4][1]+a[4][2]+a[4][3]+a[4][4]+a[4][5];
+   ave[9]=a[4][6]+a[4][7]+a[4][8]+a[4][9]+a[4][10]+a[4][11];
+   float realave[10];
+   for(i=0;i<10;i++)
+   realave[i]=ave[i]/6;
+   float mid[10];
+   for(i=0;i<10;i++)
+   mid[i]=realave[i];
+    qsort(realave,10,sizeof(realave[0]),cmp);
+   float fin[10];
+   for(i=0;i<10;i++)
+   fin[i]=realave[i];
+   float mar;
+   for(i=0;i<10;i++)
+    for(j=0;i<10;j++)
+    if(fin[j]==mid[i])
+     mar=i;
+    for(i=0;i<10;i++)
+    printf("%f\n",realave[i]);
+
+
+     return 0;
+}
